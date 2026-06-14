@@ -16,8 +16,6 @@ dev-dist/
 
 # --- Test & coverage artifacts ---
 coverage/
-playwright-report/
-test-results/
 
 # --- TypeScript incremental cache ---
 *.tsbuildinfo

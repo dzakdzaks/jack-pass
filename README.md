@@ -37,7 +37,7 @@ Vault namespaces are scoped per Google account (`google:<sub>`) or to a local pr
 | Crypto                    | Web Crypto AES-GCM, Argon2id via `hash-wasm`                   |
 | Local storage             | IndexedDB (`idb`)                                              |
 | Google APIs               | Google Identity Services token model + Drive REST v3 (`fetch`) |
-| Tests                     | Vitest (unit), Playwright (E2E)                                |
+| Tests                     | Vitest (unit)                                                  |
 
 Design tokens follow [DESIGN.md](DESIGN.md) and are defined in `src/index.css`. Product requirements live in [PRD-password-manager-pwa.md](PRD-password-manager-pwa.md).
 
@@ -120,8 +120,7 @@ jack-pass/
 │  ├─ vault/               # Vault schema, encrypt/decrypt helpers
 │  └─ index.css            # Tailwind v4 @theme tokens (DESIGN.md)
 ├─ tests/
-│  ├─ unit/                # Vitest: crypto, vault, generator
-│  └─ e2e/                 # Playwright: app shell smoke
+│  └─ unit/                # Vitest: crypto, vault, generator
 ├─ deploy/                 # nginx / Caddy examples for HTTPS VPS hosting
 ├─ security/               # CSP + production HTTP header definitions
 ├─ vite.config.ts          # PWA manifest, CSP, dev server port
@@ -138,14 +137,6 @@ bun run lint
 bun run test
 bun run build
 ```
-
-E2E smoke tests use the installed Google Chrome channel:
-
-```sh
-bun run test:e2e
-```
-
-If Chrome is not installed, either install Google Chrome or change `playwright.config.ts` to use downloaded Playwright browsers and run `bunx playwright install chromium`.
 
 ## Security notes
 

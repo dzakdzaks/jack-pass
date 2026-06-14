@@ -94,6 +94,15 @@
     border-radius: var(--radius-xs);
   }
 
+  /* iOS home indicator / Android gesture bar clearance. */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .pb-mobile-nav {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
   /* Respect reduced motion for any transitions/animations. */
   @media (prefers-reduced-motion: reduce) {
     *,

@@ -38,21 +38,42 @@ export async function pullRemote(token: string, ref: DriveFileRef): Promise<Encr
   return downloadVault(token, ref.id);
 }
 
+/** Find or create the vault file on Drive. */
+async function upsertRemoteVault(
+  token: string,
+  file: EncryptedVaultFile,
+): Promise<DriveFileRef> {
+  const existing = await findVaultFile(token);
+  return existing
+    ? await updateVaultFile(token, existing.id, file)
+    : await createVaultFile(token, file);
+}
+
+/** Update a known file id, or recreate if Drive no longer has it. */
+async function updateOrRecreateVault(
+  token: string,
+  fileId: string,
+  file: EncryptedVaultFile,
+): Promise<DriveFileRef> {
+  try {
+    return await updateVaultFile(token, fileId, file);
+  } catch (err) {
+    if (err instanceof AppError && err.code === "DRIVE_NOT_FOUND") {
+      return upsertRemoteVault(token, file);
+    }
+    throw err;
+  }
+}
+
 /** Push local file to Drive (create or update) and persist updated sync meta. */
 export async function pushLocal(
   token: string,
   file: EncryptedVaultFile,
   meta: SyncMeta,
 ): Promise<SyncMeta> {
-  let ref: DriveFileRef;
-  if (meta.driveFileId) {
-    ref = await updateVaultFile(token, meta.driveFileId, file);
-  } else {
-    const existing = await findVaultFile(token);
-    ref = existing
-      ? await updateVaultFile(token, existing.id, file)
-      : await createVaultFile(token, file);
-  }
+  const ref = meta.driveFileId
+    ? await updateOrRecreateVault(token, meta.driveFileId, file)
+    : await upsertRemoteVault(token, file);
 
   const next: SyncMeta = {
     ...meta,

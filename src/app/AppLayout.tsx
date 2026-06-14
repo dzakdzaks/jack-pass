@@ -74,12 +74,12 @@ export function AppLayout() {
         </div>
       </header>
 
-      <main className="min-w-0 flex-1 pb-[72px] sm:pb-0">
+      <main className="min-w-0 flex-1 pb-mobile-nav sm:pb-0">
         <Outlet />
       </main>
 
       {/* Mobile bottom nav */}
-      <nav className="fixed inset-x-0 bottom-0 z-30 flex border-t border-hairline bg-canvas sm:hidden">
+      <nav className="pb-safe fixed inset-x-0 bottom-0 z-30 flex border-t border-hairline bg-canvas sm:hidden">
         {navItems.map((item) => (
           <NavLink
             key={item.to}
@@ -87,7 +87,7 @@ export function AppLayout() {
             end={item.end}
             className={({ isActive }) =>
               cn(
-                "flex flex-1 flex-col items-center gap-[2px] py-[10px] text-[12px] font-semibold",
+                "flex min-h-[48px] flex-1 items-center justify-center px-[8px] py-[12px] text-[13px] font-semibold",
                 isActive ? "text-primary" : "text-muted",
               )
             }

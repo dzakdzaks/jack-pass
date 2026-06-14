@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 /*
- * JackPass design tokens, mapped 1:1 from DESIGN.md (Coinbase-style system).
- * Licensed Coinbase typefaces are substituted with Inter / JetBrains Mono per DESIGN.md "Known Gaps".
+ * JackPass design tokens, mapped 1:1 from DESIGN.md.
+ * Display and UI fonts use Inter; tabular data uses JetBrains Mono (see DESIGN.md).
  */
 @theme {
   /* Brand & accent */

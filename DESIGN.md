@@ -1,17 +1,17 @@
 ## Overview
 
-JackPass implements this design system in `src/index.css` using Tailwind CSS v4 `@theme` tokens. Licensed Coinbase typefaces are substituted with Inter and JetBrains Mono per the "Note on Font Substitutes" below.
+JackPass implements this design system in `src/index.css` using Tailwind CSS v4 `@theme` tokens. Inter and JetBrains Mono are used for UI and tabular text per the "Note on Font Substitutes" below.
 
-Coinbase reads like an institutional financial brand that happens to trade crypto — the marketing surfaces are quiet, white-canvas, editorially-spaced, and almost monochromatic. The single brand voltage is **Coinbase Blue** (`{colors.primary}` — #0052ff), used scarcely: every primary CTA pill, the brand wordmark, and inline emphasis links. Beyond that one blue, the system is white canvas + ink + soft gray elevation bands + a deep near-black editorial canvas (`{colors.surface-dark}` — #0a0b0d) for full-bleed product-mockup heroes.
+The visual language is quiet, white-canvas, editorially spaced, and almost monochromatic. The single brand accent is **Primary Blue** (`{colors.primary}` — #0052ff), used sparingly: primary CTA pills, the brand mark, and inline emphasis links. Beyond that blue, the system is white canvas + ink + soft gray elevation bands + a deep near-black editorial canvas (`{colors.surface-dark}` — #0a0b0d) for full-bleed hero sections.
 
-Type pairs **CoinbaseDisplay** for hero headlines with **CoinbaseSans** for body, captions, and navigation. Display sits at **weight 400** — not the 700+ typical of trading platforms. The choice signals editorial calm and institutional trust rather than fintech urgency.
+Type pairs a **display** face for hero headlines with a **UI sans** for body, captions, and navigation. Display sits at **weight 400** — not the heavy weights typical of trading dashboards. The choice signals calm and trust rather than urgency.
 
 The page rhythm rotates three modes: bright white editorial sections, soft-gray elevation bands, and **full-bleed dark editorial heroes** carrying layered product-UI mockup cards. The dark hero with floating dashboard mockups is the single most distinctive component.
 
 **Key Characteristics:**
 
-- Single accent color: `{colors.primary}` (#0052ff Coinbase Blue) carries every primary CTA, wordmark, and inline brand link. Used scarcely.
-- Modest display weights — CoinbaseDisplay at weight 400, never 700+.
+- Single accent color: `{colors.primary}` (#0052ff Primary Blue) carries every primary CTA, wordmark, and inline brand link. Used scarcely.
+- Modest display weights — Display at weight 400, never 700+.
 - Editorial pill geometry: every CTA is `{rounded.pill}` (100px), every asset glyph is `{rounded.full}`, every card is `{rounded.xl}` (24px). Sharp corners absent.
 - Full-bleed dark heroes with floating product-UI cards: `{component.hero-band-dark}` plus inline `{component.product-ui-card-dark}` mockups is the brand's strongest signature pattern.
 - Trading semantics: `{colors.semantic-up}` (#05b169) and `{colors.semantic-down}` (#cf202f) — text color only, never background fills.
@@ -21,9 +21,9 @@ The page rhythm rotates three modes: bright white editorial sections, soft-gray 
 
 ### Brand & Accent
 
-- **Coinbase Blue** (`{colors.primary}` — #0052ff): The single brand color. Every primary CTA pill, the Coinbase wordmark, and inline brand links.
-- **Coinbase Blue Active** (`{colors.primary-active}` — #003ecc): Press-state darken on the primary pill.
-- **Coinbase Blue Disabled** (`{colors.primary-disabled}` — #a8b8cc): Faded-blue tint for disabled CTAs.
+- **Primary Blue** (`{colors.primary}` — #0052ff): The single brand color. Every primary CTA pill, the brand mark, and inline brand links.
+- **Primary Blue Active** (`{colors.primary-active}` — #003ecc): Press-state darken on the primary pill.
+- **Primary Blue Disabled** (`{colors.primary-disabled}` — #a8b8cc): Faded-blue tint for disabled CTAs.
 - **Accent Yellow** (`{colors.accent-yellow}` — #f4b000): A small sub-brand accent used very sparingly on Bitcoin/asset glyph fills inside feature cards. Illustrative-only, not an action color.
 
 ### Surface
@@ -46,7 +46,7 @@ The page rhythm rotates three modes: bright white editorial sections, soft-gray 
 - **Body Strong** (`{colors.body-strong}` — #0a0b0d): Same as ink, used for stronger emphasis.
 - **Muted** (`{colors.muted}` — #7c828a): Sub-titles, breadcrumbs, footer secondary.
 - **Muted Soft** (`{colors.muted-soft}` — #a8acb3): Disabled link text.
-- **On Primary** (`{colors.on-primary}` — #ffffff): White text on Coinbase Blue CTAs.
+- **On Primary** (`{colors.on-primary}` — #ffffff): White text on Primary Blue CTAs.
 - **On Dark** (`{colors.on-dark}` — #ffffff): White text on dark heroes.
 - **On Dark Soft** (`{colors.on-dark-soft}` — #a8acb3): Muted off-white for secondary text on dark.
 
@@ -59,9 +59,9 @@ The page rhythm rotates three modes: bright white editorial sections, soft-gray 
 
 ### Font Family
 
-The system runs **CoinbaseDisplay** (display headlines), **CoinbaseSans** (body, navigation, captions, buttons), **CoinbaseIcons** (icon font), and **CoinbaseMono** for tabular numerical data. Fallback stack: `-apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif`.
+The system runs **Display** (hero headlines), **UI sans** (body, navigation, captions, buttons), **icon font**, and **Mono** for tabular numerical data. Fallback stack: `-apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif`.
 
-The display/body split is functional: CoinbaseDisplay carries hero headlines only; CoinbaseSans carries everything else.
+The display/body split is functional: Display carries hero headlines only; UI sans carries everything else.
 
 ### Hierarchy
 
@@ -71,7 +71,7 @@ The display/body split is functional: CoinbaseDisplay carries hero headlines onl
 | `{typography.display-xl}`     | 64px | 400    | 1.0         | -1.6px         | Subsidiary heroes                            |
 | `{typography.display-lg}`     | 52px | 400    | 1.0         | -1.3px         | Section heads                                |
 | `{typography.display-md}`     | 44px | 400    | 1.09        | -1px           | CTA-band headlines                           |
-| `{typography.display-sm}`     | 36px | 400    | 1.11        | -0.5px         | Sub-section heads — CoinbaseSans             |
+| `{typography.display-sm}`     | 36px | 400    | 1.11        | -0.5px         | Sub-section heads — UI sans             |
 | `{typography.title-lg}`       | 32px | 400    | 1.13        | -0.4px         | Card group titles                            |
 | `{typography.title-md}`       | 18px | 600    | 1.33        | 0              | Component titles, asset row primary          |
 | `{typography.title-sm}`       | 16px | 600    | 1.25        | 0              | List labels                                  |
@@ -80,7 +80,7 @@ The display/body split is functional: CoinbaseDisplay carries hero headlines onl
 | `{typography.body-sm}`        | 14px | 400    | 1.5         | 0              | Footer body                                  |
 | `{typography.caption}`        | 13px | 400    | 1.5         | 0              | Photo captions                               |
 | `{typography.caption-strong}` | 12px | 600    | 1.5         | 0              | Badge pill labels                            |
-| `{typography.number-display}` | 18px | 500    | 1.4         | 0              | Asset prices, percent changes — CoinbaseMono |
+| `{typography.number-display}` | 18px | 500    | 1.4         | 0              | Tabular values — Mono                         |
 | `{typography.button}`         | 16px | 600    | 1.15        | 0              | Standard CTA pill                            |
 | `{typography.nav-link}`       | 14px | 500    | 1.4         | 0              | Top-nav menu items                           |
 
@@ -88,15 +88,15 @@ The display/body split is functional: CoinbaseDisplay carries hero headlines onl
 
 - **Display weight stays at 400.** The single most distinctive typographic choice — signals "calm institutional brand" rather than "trading-platform urgency."
 - **Negative letter-spacing on display only.** Display uses -1px to -2px tracking; body stays at 0.
-- **CoinbaseMono on every number.** Asset prices, percent changes — anything tabular renders in CoinbaseMono.
+- **Mono on every number.** Recovery keys, timers, and tabular values render in Mono.
 
 ### Note on Font Substitutes
 
-CoinbaseDisplay, CoinbaseSans, and CoinbaseMono are licensed Coinbase typefaces.
+JackPass ships with open-source substitutes:
 
-- **CoinbaseDisplay → Inter** at weight 400, letter-spacing -1.5%.
-- **CoinbaseSans → Inter** at weight 400/600.
-- **CoinbaseMono → JetBrains Mono** or **Geist Mono** at weight 500.
+- **Display → Inter** at weight 400, letter-spacing -1.5%.
+- **UI sans → Inter** at weight 400/600.
+- **Mono → JetBrains Mono** or **Geist Mono** at weight 500.
 
 ## Layout
 
@@ -153,13 +153,13 @@ Pill for interactive, card-radius (24px) for containers, full circle for icons. 
 
 ### Top Navigation
 
-**`top-nav-light`** — Default top nav on white pages. Background `{colors.canvas}`, text `{colors.ink}`, height 64px. Layout: Coinbase wordmark left, primary horizontal menu (Cryptocurrencies / Individuals / Businesses / Institutions / Developers / Company), search-icon + globe + Sign In + Sign Up CTAs right.
+**`top-nav-light`** — Default top nav on white pages. Background `{colors.canvas}`, text `{colors.ink}`, height 64px. Layout: brand mark left, primary horizontal menu (Vault / Generator / Settings), account actions right.
 
 **`top-nav-on-dark`** — Top nav over a dark hero band. Background `{colors.surface-dark}`, text `{colors.on-dark}`. Same layout.
 
 ### Buttons
 
-**`button-primary`** — The signature Coinbase Blue pill. Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.button}` (16px / 600), padding 12px × 20px, height 44px, rounded `{rounded.pill}` (100px).
+**`button-primary`** — The signature Primary Blue pill. Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.button}` (16px / 600), padding 12px × 20px, height 44px, rounded `{rounded.pill}` (100px).
 
 **`button-primary-active`** — Press state. Background `{colors.primary-active}`, deeper blue.
 
@@ -173,7 +173,7 @@ Pill for interactive, card-radius (24px) for containers, full circle for icons. 
 
 **`button-tertiary-text`** — Inline text link. Background transparent, text `{colors.primary}`, type `{typography.button}`.
 
-**`button-pill-cta`** — Larger pill CTA used on the homepage hero ("Get started"). Same Coinbase Blue palette but with 56px height and 16px × 32px padding for a prouder stance.
+**`button-pill-cta`** — Larger pill CTA used on the homepage hero ("Get started"). Same Primary Blue palette but with 56px height and 16px × 32px padding for a prouder stance.
 
 ### Hero Bands
 
@@ -205,7 +205,7 @@ Pill for interactive, card-radius (24px) for containers, full circle for icons. 
 
 ### Forms
 
-**`text-input`** — Standard text input. Background `{colors.canvas}`, text `{colors.ink}`, rounded `{rounded.md}` (12px), padding 14px × 16px, height 48px, 1px hairline border. On focus, border thickens to 2px Coinbase Blue.
+**`text-input`** — Standard text input. Background `{colors.canvas}`, text `{colors.ink}`, rounded `{rounded.md}` (12px), padding 14px × 16px, height 48px, 1px hairline border. On focus, border thickens to 2px Primary Blue.
 
 **`search-input-pill`** — Pill-shaped search bar. Background `{colors.surface-strong}`, rounded `{rounded.pill}`, padding 12px × 20px, height 44px.
 
@@ -227,20 +227,20 @@ Pill for interactive, card-radius (24px) for containers, full circle for icons. 
 
 ### Do
 
-- Reserve `{colors.primary}` (Coinbase Blue) for primary CTAs, wordmark, brand-glyph illustrations, inline accent links.
+- Reserve `{colors.primary}` (Primary Blue) for primary CTAs, wordmark, brand-glyph illustrations, inline accent links.
 - Set every CTA as `{rounded.pill}` (100px); every asset glyph as `{rounded.full}`.
-- Keep CoinbaseDisplay headlines at weight 400.
+- Keep Display headlines at weight 400.
 - Use the dark/light band rotation as page rhythm.
-- Render every numerical value in CoinbaseMono via `{typography.number-display}`.
+- Render every numerical value in Mono via `{typography.number-display}`.
 - Pair every dark hero with a layered product-UI mockup card stack.
 
 ### Don't
 
-- Don't introduce a secondary brand color. Coinbase Blue is the only action color; trading green/red are semantic-only.
+- Don't introduce a secondary brand color. Primary Blue is the only action color; trading green/red are semantic-only.
 - Don't bold display copy — display sits at weight 400; bolding shifts the brand voice.
 - Don't add drop shadow tiers — system has one shadow tier.
 - Don't use sharp `{rounded.none}` (0px) on CTAs.
-- Don't mix CoinbaseDisplay and CoinbaseSans inside the same headline.
+- Don't mix Display and UI sans inside the same headline.
 - Don't use trading green/red as a button background.
 - Don't extract a CTA color from a third-party widget (cookie consent, OneTrust). The brand's CTA color is what appears on actual product CTAs, not on injected modals.
 
@@ -277,12 +277,12 @@ Pill for interactive, card-radius (24px) for containers, full circle for icons. 
 3. Variants live as separate entries inside the `components:` block.
 4. Use `{token.refs}` everywhere — never inline hex.
 5. Hover state never documented. Only Default and Active/Pressed.
-6. CoinbaseDisplay 400 for display, CoinbaseSans 400/600/700 for body. CoinbaseMono on every number.
-7. Coinbase Blue stays scarce — one or two blue moments per band.
+6. Display at weight 400 for headlines; UI sans at 400/600/700 for body. Mono on every number.
+7. Primary Blue stays scarce — one or two blue moments per band.
 
 ## Known Gaps
 
-- CoinbaseDisplay, CoinbaseSans, CoinbaseMono are licensed; Inter and JetBrains Mono are documented substitutes.
+- Inter and JetBrains Mono are the shipped font substitutes for display, UI sans, and mono roles.
 - In-product trading surfaces (order book, charts, order forms) are behind login walls — this document covers marketing only.
 - Animation timings out of scope.
 - Form validation states beyond focus not visible on captured surfaces.

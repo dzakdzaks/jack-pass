@@ -52,3 +52,7 @@ tmp/
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+
+# --- Internal planning docs (not for public repo) ---
+IMPLEMENTATION-PLAN.md
+PRD-password-manager-pwa.md

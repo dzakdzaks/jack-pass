@@ -1,0 +1,11 @@
+/// <reference types="vite/client" />
+/// <reference types="vite-plugin-pwa/client" />
+
+interface ImportMetaEnv {
+  /** Public Google OAuth client id for Drive appdata sync (browser app). */
+  readonly VITE_GOOGLE_CLIENT_ID?: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}

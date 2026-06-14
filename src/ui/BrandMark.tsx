@@ -1,0 +1,27 @@
+// Inline JackPass brand mark (matches public/icons/icon.svg).
+
+interface Props {
+  size?: number;
+  className?: string;
+}
+
+export function BrandMark({ size = 40, className }: Props) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 512 512"
+      role="img"
+      aria-label="JackPass"
+      className={className}
+    >
+      <rect width="512" height="512" rx="115" fill="#0052ff" />
+      <path
+        d="M168 150h64v150c0 41-33 74-74 74-30 0-56-18-67-44l54-26c2 9 7 16 16 16 10 0 17-7 17-20V150z"
+        fill="#ffffff"
+      />
+      <circle cx="336" cy="186" r="34" fill="#ffffff" />
+      <rect x="306" y="236" width="60" height="126" rx="30" fill="#ffffff" />
+    </svg>
+  );
+}

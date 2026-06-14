@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="JackPass">
+  <rect width="512" height="512" fill="#0052ff"/>
+  <path d="M204 190h52v126c0 34-27 61-61 61-25 0-46-15-55-37l44-21c2 7 6 13 13 13 8 0 14-6 14-16V190z" fill="#ffffff"/>
+  <circle cx="324" cy="220" r="28" fill="#ffffff"/>
+  <rect x="299" y="262" width="50" height="105" rx="25" fill="#ffffff"/>
+</svg>

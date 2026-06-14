@@ -1,0 +1,54 @@
+# --- Dependencies & installs ---
+node_modules/
+
+# --- Build output (rebuild with `bun run build` on deploy/CI) ---
+dist/
+dev-dist/
+.vite/
+
+# --- Secrets & local env (NEVER commit) ---
+.env
+.env.*
+!.env.example
+
+# Local overrides (e.g. .env.local)
+*.local
+
+# --- Test & coverage artifacts ---
+coverage/
+playwright-report/
+test-results/
+
+# --- TypeScript incremental cache ---
+*.tsbuildinfo
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Editor / IDE (personal workspace settings) ---
+.idea/
+*.swp
+*.swo
+*~
+.vscode/
+!.vscode/extensions.json
+
+# --- Cursor (local agent/editor state) ---
+.cursor/
+
+# --- Temp ---
+tmp/
+.cache/
+
+# --- Other package managers (project uses Bun + bun.lock only) ---
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

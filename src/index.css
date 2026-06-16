@@ -69,6 +69,7 @@
   html {
     -webkit-text-size-adjust: 100%;
     color-scheme: light;
+    background-color: var(--color-canvas);
   }
 
   body {
